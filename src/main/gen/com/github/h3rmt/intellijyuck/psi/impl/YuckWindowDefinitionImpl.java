@@ -86,4 +86,10 @@ public class YuckWindowDefinitionImpl extends YuckNamedElementImpl<YuckWindowDef
     return findChildByType(IDENTIFIER);
   }
 
+  @Override
+  @NotNull
+  public String getReferenceName() {
+    return YuckPsiImplUtil.getReferenceName(this);
+  }
+
 }

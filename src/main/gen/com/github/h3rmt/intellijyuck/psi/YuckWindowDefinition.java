@@ -36,8 +36,7 @@ public interface YuckWindowDefinition extends YuckNamedDefinitionExpression, Stu
   @Nullable
   PsiElement getIdentifier();
 
-  //WARNING: getReferenceName(...) is skipped
-  //matching getReferenceName(YuckWindowDefinition, ...)
-  //methods are not found in YuckPsiImplUtil
+  @NotNull
+  String getReferenceName();
 
 }

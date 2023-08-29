@@ -70,8 +70,7 @@ public interface YuckComboBoxTextDefinition extends YuckDefinitionExpression {
   @Nullable
   PsiElement getRparen();
 
-  //WARNING: getReferenceName(...) is skipped
-  //matching getReferenceName(YuckComboBoxTextDefinition, ...)
-  //methods are not found in YuckPsiImplUtil
+  @NotNull
+  String getReferenceName();
 
 }

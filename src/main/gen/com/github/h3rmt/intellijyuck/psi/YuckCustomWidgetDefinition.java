@@ -36,8 +36,7 @@ public interface YuckCustomWidgetDefinition extends YuckNamedDefinitionExpressio
   @Nullable
   PsiElement getIdentifier();
 
-  //WARNING: getReferenceName(...) is skipped
-  //matching getReferenceName(YuckCustomWidgetDefinition, ...)
-  //methods are not found in YuckPsiImplUtil
+  @NotNull
+  String getReferenceName();
 
 }

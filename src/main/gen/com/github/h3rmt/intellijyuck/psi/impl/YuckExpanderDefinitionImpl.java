@@ -152,4 +152,10 @@ public class YuckExpanderDefinitionImpl extends YuckCompositeElementImpl impleme
     return findChildByType(RPAREN);
   }
 
+  @Override
+  @NotNull
+  public String getReferenceName() {
+    return YuckPsiImplUtil.getReferenceName(this);
+  }
+
 }

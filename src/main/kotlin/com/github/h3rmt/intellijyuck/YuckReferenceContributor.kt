@@ -17,11 +17,11 @@ class YuckReferenceContributor : PsiReferenceContributor() {
         .inFile(
           PlatformPatterns.psiElement(YuckFile::class.java)
         ),
-      VlangCommentReferenceProvider()
+      YuckCommentReferenceProvider()
     )
   }
 
-  class VlangCommentReferenceProvider : PsiReferenceProvider() {
+  class YuckCommentReferenceProvider : PsiReferenceProvider() {
     override fun getReferencesByElement(element: PsiElement, context: ProcessingContext): Array<out PsiReference> {
       val properties = YuckUtil.find<YuckCustomWidgetDefinition>(element.project)
       LOG.warn("properties: $properties element: $element")

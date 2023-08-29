@@ -86,4 +86,10 @@ public class YuckCustomWidgetDefinitionImpl extends YuckNamedElementImpl<YuckCus
     return findChildByType(IDENTIFIER);
   }
 
+  @Override
+  @NotNull
+  public String getReferenceName() {
+    return YuckPsiImplUtil.getReferenceName(this);
+  }
+
 }

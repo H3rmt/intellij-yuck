@@ -158,4 +158,10 @@ public class YuckBoxDefinitionImpl extends YuckCompositeElementImpl implements Y
     return findChildByType(RPAREN);
   }
 
+  @Override
+  @NotNull
+  public String getReferenceName() {
+    return YuckPsiImplUtil.getReferenceName(this);
+  }
+
 }

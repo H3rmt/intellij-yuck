@@ -70,8 +70,7 @@ public interface YuckExpanderDefinition extends YuckDefinitionExpression {
   @Nullable
   PsiElement getRparen();
 
-  //WARNING: getReferenceName(...) is skipped
-  //matching getReferenceName(YuckExpanderDefinition, ...)
-  //methods are not found in YuckPsiImplUtil
+  @NotNull
+  String getReferenceName();
 
 }

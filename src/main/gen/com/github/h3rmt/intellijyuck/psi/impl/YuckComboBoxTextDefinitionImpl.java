@@ -152,4 +152,10 @@ public class YuckComboBoxTextDefinitionImpl extends YuckCompositeElementImpl imp
     return findChildByType(RPAREN);
   }
 
+  @Override
+  @NotNull
+  public String getReferenceName() {
+    return YuckPsiImplUtil.getReferenceName(this);
+  }
+
 }

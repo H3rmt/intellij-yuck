@@ -73,8 +73,7 @@ public interface YuckBoxDefinition extends YuckDefinitionExpression {
   @Nullable
   PsiElement getRparen();
 
-  //WARNING: getReferenceName(...) is skipped
-  //matching getReferenceName(YuckBoxDefinition, ...)
-  //methods are not found in YuckPsiImplUtil
+  @NotNull
+  String getReferenceName();
 
 }
