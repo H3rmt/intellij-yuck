@@ -3,5 +3,9 @@
 # intellij-yuck Changelog
 
 ## [Unreleased]
-### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+
+## [0.0.1-alpha.1] - 2023-08-28
+HI
+
+[Unreleased]: https://github.com/H3rmt/intellij-yuck/compare/v0.0.1-alpha.1...HEAD
+[0.0.1-alpha.1]: https://github.com/H3rmt/intellij-yuck/commits/v0.0.1-alpha.1

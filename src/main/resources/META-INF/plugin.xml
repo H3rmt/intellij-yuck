@@ -1,18 +1,46 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.h3rmt.intellijyuck</id>
-    <name>intellij-yuck Template</name>
-    <vendor>h3rmt</vendor>
+    <name>Yuck</name>
+    <vendor>H3rmt</vendor>
+
+    <description><![CDATA[
+Provides support for <a href="https://github.com/elkowar/eww">Eww's Yuck</a> language
+<br>
+    ]]></description>
+
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.h3rmt.intellijyuck.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
+        <fileType
+                name="Yuck"
+                implementationClass="com.github.h3rmt.intellijyuck.YuckFileType"
+                fieldName="INSTANCE"
+                language="Yuck"
+                extensions="yuck"/>
+        <lang.parserDefinition
+                language="Yuck"
+                implementationClass="com.github.h3rmt.intellijyuck.YuckParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+                language="Yuck"
+                implementationClass="com.github.h3rmt.intellijyuck.YuckSyntaxHighlighterFactory"/>
+        <colorSettingsPage
+                implementation="com.github.h3rmt.intellijyuck.YuckColorSettingsPage"/>
+        <annotator
+                language="Yuck"
+                implementationClass="com.github.h3rmt.intellijyuck.YuckAnnotator"/>
+        <codeInsight.lineMarkerProvider
+                language="Yuck"
+                implementationClass="com.github.h3rmt.intellijyuck.YuckLineMarkerProvider"/>
+        <completion.contributor
+                language="Yuck"
+                implementationClass="com.github.h3rmt.intellijyuck.YuckCompletionContributor"/>
 
-    <applicationListeners>
-        <listener class="com.github.h3rmt.intellijyuck.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+        <psi.referenceContributor language="Yuck"
+                                  implementation="com.github.h3rmt.intellijyuck.YuckReferenceContributor"/>
+
+        <stubIndex implementation="com.github.h3rmt.intellijyuck.stubs.index.YuckNamesIndex"/>
+        <stubElementTypeHolder class="com.github.h3rmt.intellijyuck.psi.YuckTypes"/>
+    </extensions>
 </idea-plugin>

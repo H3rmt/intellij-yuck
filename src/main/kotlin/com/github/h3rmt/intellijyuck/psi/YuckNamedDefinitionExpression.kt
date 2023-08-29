@@ -1,0 +1,3 @@
+package com.github.h3rmt.intellijyuck.psi
+
+interface YuckNamedDefinitionExpression : YuckDefinitionExpression, YuckNamedElement, YuckCompositeElement

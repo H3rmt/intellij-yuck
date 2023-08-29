@@ -1,0 +1,309 @@
+{
+  parserClass="com.github.h3rmt.intellijyuck.parser.YuckParser"
+
+  implements='com.github.h3rmt.intellijyuck.psi.YuckCompositeElement'
+  extends='com.github.h3rmt.intellijyuck.psi.impl.YuckCompositeElementImpl'
+
+  psiClassPrefix="Yuck"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.github.h3rmt.intellijyuck.psi"
+  psiImplPackage="com.github.h3rmt.intellijyuck.psi.impl"
+
+  elementTypeHolderClass="com.github.h3rmt.intellijyuck.psi.YuckTypes"
+  elementTypeClass="com.github.h3rmt.intellijyuck.psi.YuckElementType"
+  tokenTypeClass="com.github.h3rmt.intellijyuck.psi.YuckTokenType"
+
+  psiImplUtilClass="com.github.h3rmt.intellijyuck.psi.YuckPsiImplUtil"
+
+  tokens=[
+    LPAREN               = '('
+    RPAREN               = ')'
+    LBRACKET             = '['
+    RBRACKET             = ']'
+    SINGLE_QUOTE         = "'"
+    DOUBLE_QUOTE         = '"'
+    MONITORPROP          = ':monitor'
+    WMIGNOREPROP         = ':wm-ignore'
+
+    CLASSPROP            = ':class'
+    VALIGNPROP           = ':valign'
+    HALIGNPROP           = ':halign'
+    VEXPANDPROP          = ':vexpand'
+    HEXPANDPROP          = ':hexpand'
+    WIDTHPROP            = ':width'
+    HEIGHTPROP           = ':height'
+    ACTIVEPROP           = ':active'
+    TOOLTIPPROP          = ':tooltip'
+    VISIBLEPROP          = ':visible'
+    STYLEPROP            = ':style'
+    CSSPROP              = ':css'
+
+    TIMEOUTPROP          = ':timeout'
+    ONCHANGEPROP         = ':onchange'
+
+    NAMEPROP             = ':name'
+    EXPANDEDPROP         = ':expanded'
+
+    SPACINGPROP          = ':spacing'
+    ORIENTATIONPROP      = ':orientation'
+    SPACEEVENLYPROP      = ':space-evenly'
+
+    DEFWINDOW            = 'defwindow'
+    DEFWIDGET            = 'defwidget'
+    COMBOBOXTEXT         = 'combo-box-text'
+    EXPANDER             = 'expander'
+    BOX                  = 'box'
+
+//    identifier           = "regexp:[a-zA-Z_][a-zA-Z0-9_]*"
+//    int="regexp:[0-9]+"
+//    space='regexp:\s+'
+  ]
+
+  implements("(Window|CustomWidget)Reference")="com.github.h3rmt.intellijyuck.psi.YuckReferenceExpression"
+  implements("(ComboBoxText|Expander|Box)Definition")="com.github.h3rmt.intellijyuck.psi.YuckDefinitionExpression"
+  implements("(Window|CustomWidget)Definition")="com.github.h3rmt.intellijyuck.psi.YuckNamedDefinitionExpression"
+
+  extends("(Window|CustomWidget)Definition")="com.github.h3rmt.intellijyuck.psi.impl.YuckNamedElementImpl<?>"
+  elementTypeFactory("(Window|CustomWidget)Definition")='com.github.h3rmt.intellijyuck.stubs.YuckElementTypeFactory.stubFactory'
+
+  generateTokenAccessors=true
+}
+
+File ::= Definition *
+//private nl ::= '<NL>'
+
+private Definition ::= !<<eof>>(WindowDefinition | CustomWidgetDefinition) {
+    pin = 1
+    recoverWhile = TopLevelRecover
+}
+private TopLevelRecover ::= !((LPAREN DEFWINDOW) | (LPAREN DEFWIDGET))
+
+WindowDefinition ::= LPAREN DEFWINDOW identifier WindowProp* Widget RPAREN {
+  pin=2
+  methods=[getReferenceName]
+  stubClass='com.github.h3rmt.intellijyuck.stubs.YuckWindowDefinitionStub'
+}
+
+WindowProp ::= (MonitorProp | WmIgnoreProp) {
+    recoverWhile = PropValueRecover
+}
+private PropValueRecover ::= !(MONITORPROP | WMIGNOREPROP | LPAREN)
+
+MonitorProp ::= ( MONITORPROP (int | float | identifier)) {
+  pin = 1
+}
+
+WmIgnoreProp ::= ( WMIGNOREPROP (true  | false)) {
+  pin = 1
+  methods=[isTrue]
+  implements="com.github.h3rmt.intellijyuck.psi.YuckBooleanExpression"
+}
+
+CustomWidgetDefinition ::= LPAREN DEFWIDGET identifier CustomWidgetDefinitionBrackets Widget* RPAREN {
+  pin=2
+  methods=[getReferenceName]
+  stubClass='com.github.h3rmt.intellijyuck.stubs.YuckCustomWidgetDefinitionStub'
+}
+
+// TODO add content in between []
+CustomWidgetDefinitionBrackets ::= LBRACKET RBRACKET {
+  pin=1
+}
+
+private Widget ::= CustomWidgetReference | PredefinedWidget
+
+CustomWidgetReference ::= LPAREN identifier RPAREN {
+  pin=2
+  methods=[getName setName]
+}
+
+
+// widgets
+
+private PredefinedWidget ::= ComboBoxTextDefinition | ExpanderDefinition | BoxDefinition
+
+private WidgetRecover ::= !(RPAREN |  (LPAREN COMBOBOXTEXT) | (LPAREN EXPANDER) | (LPAREN BOX))
+
+/*
+combo-box-text
+A combo box allowing the user to choose between several items.
+
+Properties
+
+items: vec Items that should be displayed in the combo box
+timeout: duration timeout of the command: Default: "200ms"
+onchange: string runs the code when a item was selected, replacing {} with the item as a string
+*/
+ComboBoxTextDefinition ::= LPAREN COMBOBOXTEXT ComboBoxTextProp* Widget* RPAREN {
+  pin=2
+  methods=[getReferenceName]
+//  recoverWhile = WidgetRecover
+}
+
+// TODO items missing
+// TODO timeout set to duration
+private ComboBoxTextProp ::=
+    TimeoutProp |
+    OnChangeProp |
+    WidgetProp
+
+TimeoutProp ::= TIMEOUTPROP (int) {
+    pin=1
+}
+OnChangeProp ::= ONCHANGEPROP (string) {
+    pin=1
+}
+
+/*
+expander
+A widget that can expand and collapse, showing/hiding it's children.
+
+Properties
+
+name: string name of the expander
+expanded: bool sets if the tree is expanded
+*/
+ExpanderDefinition ::= LPAREN EXPANDER ExpanderProps* Widget* RPAREN {
+  pin=2
+  methods=[getReferenceName]
+//  recoverWhile = WidgetRecover
+}
+
+private ExpanderProps ::=
+    NameProp |
+    ExpandProp |
+    WidgetProp
+
+NameProp ::= NAMEPROP (string) {
+    pin=1
+}
+ExpandProp ::= EXPANDEDPROP (true  | false) {
+  pin=1
+  methods=[isTrue]
+  implements="com.github.h3rmt.intellijyuck.psi.YuckBooleanExpression"
+}
+
+
+/*
+box
+the main layout container
+
+Properties
+
+spacing: int spacing between elements
+orientation: string orientation of the box. possible values: "vertical", "v", "horizontal", "h"
+space-evenly: bool space the widgets evenly.
+*/
+BoxDefinition ::= LPAREN BOX BoxProps* Widget* RPAREN {
+  pin=2
+  methods=[getReferenceName]
+//  recoverWhile = WidgetRecover
+}
+
+private BoxProps ::=
+    SpacingProp |
+    OrientationProp |
+    SpaceEvenlyProp |
+    WidgetProp
+
+SpacingProp ::= SPACINGPROP (int) {
+    pin=1
+}
+
+OrientationProp ::= ORIENTATIONPROP ("vertical" | "v" | "horizontal" | "h") {
+    pin=1
+}
+
+SpaceEvenlyProp ::= SPACEEVENLYPROP (true  | false) {
+  pin=1
+  methods=[isTrue]
+  implements="com.github.h3rmt.intellijyuck.psi.YuckBooleanExpression"
+}
+
+
+
+/*
+class: string css class name
+valign: string how to align this vertically. possible values: "fill", "baseline", "center", "start", "end"
+halign: string how to align this horizontally. possible values: "fill", "baseline", "center", "start", "end"
+vexpand: bool should this container expand vertically. Default: false.
+hexpand: bool should this widget expand horizontally. Default: false.
+width: int width of this element. note that this can not restrict the size if the contents stretch it
+height: int height of this element. note that this can not restrict the size if the contents stretch it
+active: bool If this widget can be interacted with
+tooltip: string tooltip text (on hover)
+visible: bool visibility of the widget
+style: string inline css style applied to the widget
+css: string scss code applied to the widget, i.e.: button {color: red;}
+ */
+
+private WidgetProp ::=
+    ClassProp |
+    ValignProp |
+    HalignProp |
+    VexpandProp |
+    HexpandProp |
+    WidthProp |
+    HeightProp |
+    ActiveProp |
+    TooltipProp |
+    VisibleProp |
+    StyleProp |
+    CssProp
+
+
+ClassProp ::= CLASSPROP (string) {
+  pin=1
+}
+
+ValignProp ::= VALIGNPROP ("fill" | "baseline" | "center" | "start" | "end") {
+  pin=1
+}
+
+HalignProp ::= HALIGNPROP ("fill" | "baseline" | "center" | "start" | "end") {
+  pin=1
+}
+
+VexpandProp ::= VEXPANDPROP (true  | false) {
+  pin = 1
+  methods=[isTrue]
+  implements="com.github.h3rmt.intellijyuck.psi.YuckBooleanExpression"
+}
+
+HexpandProp ::= HEXPANDPROP (true  | false) {
+  pin = 1
+  methods=[isTrue]
+  implements="com.github.h3rmt.intellijyuck.psi.YuckBooleanExpression"
+}
+
+WidthProp ::= WIDTHPROP (int) {
+  pin = 1
+}
+
+HeightProp ::= HEIGHTPROP (int) {
+  pin = 1
+}
+
+ActiveProp ::= ACTIVEPROP (true  | false) {
+  pin = 1
+  methods=[isTrue]
+  implements="com.github.h3rmt.intellijyuck.psi.YuckBooleanExpression"
+}
+
+TooltipProp ::= TOOLTIPPROP (string) {
+  pin = 1
+}
+
+VisibleProp ::= VISIBLEPROP (true  | false) {
+  pin = 1
+  methods=[isTrue]
+  implements="com.github.h3rmt.intellijyuck.psi.YuckBooleanExpression"
+}
+
+StyleProp ::= STYLEPROP (string) {
+  pin = 1
+}
+
+CssProp ::= CSSPROP (string) {
+  pin = 1
+}

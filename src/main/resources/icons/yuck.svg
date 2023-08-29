@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 16 16" width="16px" height="16px" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <path style="stroke: rgb(0, 0, 0); fill: rgb(0, 0, 0);" transform="matrix(0.018378000706434253, 0, 0, 0.02470100298523903, -3.65680996267415, -8.469519423937635)" d="M 746.292 390.803 A 273.541 273.541 0 1 1 746.292 937.885 A 280.38 280.38 0 0 0 746.292 390.803 Z" bx:shape="crescent 746.292 664.344 273.541 180 0.9 1@bcb229bc"/>
+  <path style="stroke: rgb(0, 0, 0); fill: rgb(0, 0, 0);" transform="matrix(-0.01876800134778023, 0, 0, 0.02470100298523903, 20.279105682248982, -8.469519423937635)" d="M 746.292 390.803 A 273.541 273.541 0 1 1 746.292 937.885 A 280.38 280.38 0 0 0 746.292 390.803 Z" bx:shape="crescent 746.292 664.344 273.541 180 0.9 1@bcb229bc"/>
+  <text style="fill: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" transform="matrix(0.5053150057792664, 0, 0, 0.4015859663486481, 4.979606039144859, 10.141230354209174)">y</text>
+</svg>
