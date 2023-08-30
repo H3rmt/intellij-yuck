@@ -34,8 +34,8 @@ public class YuckTimeoutPropImpl extends YuckCompositeElementImpl implements Yuc
 
   @Override
   @Nullable
-  public PsiElement getInt() {
-    return findChildByType(INT);
+  public PsiElement getString() {
+    return findChildByType(STRING);
   }
 
 }

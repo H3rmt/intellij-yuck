@@ -11,20 +11,22 @@ import com.intellij.patterns.PlatformPatterns
 import com.intellij.util.ProcessingContext
 
 
-val LOG = logger<YuckCompletionContributor>()
-
-//
 class YuckCompletionContributor : CompletionContributor() {
   init {
-    extend(
-      CompletionType.BASIC,
-      PlatformPatterns.psiElement().withParent(YuckBoxDefinition::class.java),
-      WidgetPropsCompletionProvider
-    )
+//    extend(
+//      CompletionType.BASIC,
+//      PlatformPatterns.psiElement().withParent(YuckBoxDefinition::class.java),
+//      WidgetPropsCompletionProvider
+//    )
     extend(
       CompletionType.BASIC,
       PlatformPatterns.psiElement(YuckTypes.IDENTIFIER).inside(YuckCustomWidgetReference::class.java),
       WidgetCompletionProvider
+    )
+    extend(
+      CompletionType.BASIC,
+      PlatformPatterns.psiElement(YuckTypes.IDENTIFIER).inside(YuckCustomWidgetReference::class.java),
+      CustomWidgetReferenceCompletionProvider
     )
   }
 

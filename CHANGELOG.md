@@ -1,11 +1,47 @@
-<!-- Keep a Changelog guide -> https://keepachangelog.com -->
-
-# intellij-yuck Changelog
+# intellij Yuck Changelog
 
 ## [Unreleased]
 
-## [0.0.1-alpha.1] - 2023-08-28
-HI
+## [0.0.1-alpha.1] - 2023-08-31
 
-[Unreleased]: https://github.com/H3rmt/intellij-yuck/compare/v0.0.1-alpha.1...HEAD
-[0.0.1-alpha.1]: https://github.com/H3rmt/intellij-yuck/commits/v0.0.1-alpha.1
+### Supported Elements: 
+- combo-box-text
+  - TimeoutProp (just string, not duration)
+  - OnChange (no highlighting for {})
+- expander
+  - name
+  - expanded
+- box
+  - spacing
+  - orientation
+  - space-evenly
+
+### Supported Widget Properties:
+- class
+- valign
+- halign
+- vexpand
+- hexpand
+- width
+- height
+- active
+- tooltip
+- visible
+- style
+- css
+
+### Added
+
+- Basic syntax highlighting
+- Color Settings Page
+- Widget Reference resolve
+- Widget Reference +  completion
+- Widget reference line Marker
+- Widget reference completion
+- Widget completion
+
+### Changed
+
+### Improved
+
+### Fixed

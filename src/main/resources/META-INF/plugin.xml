@@ -36,7 +36,6 @@ Provides support for <a href="https://github.com/elkowar/eww">Eww's Yuck</a> lan
         <completion.contributor
                 language="Yuck"
                 implementationClass="com.github.h3rmt.intellijyuck.YuckCompletionContributor"/>
-
         <psi.referenceContributor language="Yuck"
                                   implementation="com.github.h3rmt.intellijyuck.YuckReferenceContributor"/>
 

@@ -142,12 +142,13 @@ ComboBoxTextDefinition ::= LPAREN COMBOBOXTEXT ComboBoxTextProp* Widget* RPAREN 
 
 // TODO items missing
 // TODO timeout set to duration
+// TODO add {} highlighting
 private ComboBoxTextProp ::=
     TimeoutProp |
     OnChangeProp |
     WidgetProp
 
-TimeoutProp ::= TIMEOUTPROP (int) {
+TimeoutProp ::= TIMEOUTPROP (string) {
     pin=1
 }
 OnChangeProp ::= ONCHANGEPROP (string) {
@@ -304,6 +305,7 @@ StyleProp ::= STYLEPROP (string) {
   pin = 1
 }
 
+// TODO add sass highlighting
 CssProp ::= CSSPROP (string) {
   pin = 1
 }

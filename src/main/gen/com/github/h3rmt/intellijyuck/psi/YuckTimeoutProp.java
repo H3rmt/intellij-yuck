@@ -11,6 +11,6 @@ public interface YuckTimeoutProp extends YuckCompositeElement {
   PsiElement getTimeoutprop();
 
   @Nullable
-  PsiElement getInt();
+  PsiElement getString();
 
 }

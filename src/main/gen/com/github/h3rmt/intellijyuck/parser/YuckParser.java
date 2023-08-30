@@ -586,7 +586,7 @@ public class YuckParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // TIMEOUTPROP (int)
+  // TIMEOUTPROP (string)
   public static boolean TimeoutProp(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "TimeoutProp")) return false;
     if (!nextTokenIs(b, TIMEOUTPROP)) return false;
@@ -594,7 +594,7 @@ public class YuckParser implements PsiParser, LightPsiParser {
     Marker m = enter_section_(b, l, _NONE_, TIMEOUT_PROP, null);
     r = consumeToken(b, TIMEOUTPROP);
     p = r; // pin = 1
-    r = r && consumeToken(b, INT);
+    r = r && consumeToken(b, STRING);
     exit_section_(b, l, m, r, p, null);
     return r || p;
   }
