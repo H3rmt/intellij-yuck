@@ -2,8 +2,6 @@
 
 ## [Unreleased]
 
-## [0.0.1-alpha.1] - 2023-08-31
-
 ### Supported Elements:
 - combo-box-text
   - TimeoutProp (just string, not duration)
