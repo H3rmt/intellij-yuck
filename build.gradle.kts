@@ -1,4 +1,5 @@
 import org.jetbrains.changelog.Changelog
+import org.jetbrains.changelog.date
 
 fun properties(key: String) = providers.gradleProperty(key)
 fun environment(key: String) = providers.environmentVariable(key)
@@ -48,8 +49,8 @@ intellij {
 
 // Configure Gradle Changelog Plugin - read more: https://github.com/JetBrains/gradle-changelog-plugin
 changelog {
-  groups.empty()
-  repositoryUrl = properties("pluginRepositoryUrl")
+  groups.set(emptyList())
+//  repositoryUrl = properties("pluginRepositoryUrl")
 }
 
 tasks {

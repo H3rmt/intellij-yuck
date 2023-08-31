@@ -4,7 +4,7 @@
 
 ## [0.0.1-alpha.1] - 2023-08-31
 
-### Supported Elements: 
+### Supported Elements:
 - combo-box-text
   - TimeoutProp (just string, not duration)
   - OnChange (no highlighting for {})
@@ -31,7 +31,6 @@
 - css
 
 ### Added
-
 - Basic syntax highlighting
 - Color Settings Page
 - Widget Reference resolve
@@ -39,9 +38,3 @@
 - Widget reference line Marker
 - Widget reference completion
 - Widget completion
-
-### Changed
-
-### Improved
-
-### Fixed
