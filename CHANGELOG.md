@@ -1,8 +1,11 @@
 # intellij Yuck Changelog
 
-## [Unreleased]
+## Unreleased
+
+## 0.0.1-alpha.2 - 2023-08-31
 
 ### Supported Elements:
+
 - combo-box-text
   - TimeoutProp (just string, not duration)
   - OnChange (no highlighting for {})
@@ -15,6 +18,7 @@
   - space-evenly
 
 ### Supported Widget Properties:
+
 - class
 - valign
 - halign
@@ -29,6 +33,7 @@
 - css
 
 ### Added
+
 - Basic syntax highlighting
 - Color Settings Page
 - Widget Reference resolve
