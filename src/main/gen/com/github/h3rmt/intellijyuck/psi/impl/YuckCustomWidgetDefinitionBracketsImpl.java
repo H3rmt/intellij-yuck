@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckCustomWidgetDefinitionBracketsImpl extends YuckCompositeElementImpl implements YuckCustomWidgetDefinitionBrackets {
 
-  public YuckCustomWidgetDefinitionBracketsImpl(ASTNode node) {
+  public YuckCustomWidgetDefinitionBracketsImpl(@NotNull ASTNode node) {
     super(node);
   }
 

@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckWindowPropImpl extends YuckCompositeElementImpl implements YuckWindowProp {
 
-  public YuckWindowPropImpl(ASTNode node) {
+  public YuckWindowPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckOnChangePropImpl extends YuckCompositeElementImpl implements YuckOnChangeProp {
 
-  public YuckOnChangePropImpl(ASTNode node) {
+  public YuckOnChangePropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

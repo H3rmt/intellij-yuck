@@ -1,5 +1,6 @@
 package com.github.h3rmt.intellijyuck
 
+import com.github.h3rmt.intellijyuck.lexer.YuckLexer
 import com.github.h3rmt.intellijyuck.parser.YuckParser
 import com.github.h3rmt.intellijyuck.psi.YuckFile
 import com.github.h3rmt.intellijyuck.psi.YuckTokenTypes

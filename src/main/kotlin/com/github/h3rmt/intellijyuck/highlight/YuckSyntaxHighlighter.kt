@@ -1,5 +1,7 @@
-package com.github.h3rmt.intellijyuck
+package com.github.h3rmt.intellijyuck.highlight
 
+import com.github.h3rmt.intellijyuck.color.YuckColor
+import com.github.h3rmt.intellijyuck.lexer.YuckLexer
 import com.github.h3rmt.intellijyuck.psi.YuckTokenTypes
 import com.github.h3rmt.intellijyuck.psi.YuckTypes.*
 import com.intellij.openapi.editor.colors.TextAttributesKey

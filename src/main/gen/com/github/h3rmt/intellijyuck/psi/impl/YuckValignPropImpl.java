@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckValignPropImpl extends YuckCompositeElementImpl implements YuckValignProp {
 
-  public YuckValignPropImpl(ASTNode node) {
+  public YuckValignPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

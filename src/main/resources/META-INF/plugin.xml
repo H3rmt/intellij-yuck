@@ -24,20 +24,20 @@ Provides support for <a href="https://github.com/elkowar/eww">Eww's Yuck</a> lan
                 implementationClass="com.github.h3rmt.intellijyuck.YuckParserDefinition"/>
         <lang.syntaxHighlighterFactory
                 language="Yuck"
-                implementationClass="com.github.h3rmt.intellijyuck.YuckSyntaxHighlighterFactory"/>
+                implementationClass="com.github.h3rmt.intellijyuck.highlight.YuckSyntaxHighlighterFactory"/>
         <colorSettingsPage
-                implementation="com.github.h3rmt.intellijyuck.YuckColorSettingsPage"/>
+                implementation="com.github.h3rmt.intellijyuck.color.YuckColorSettingsPage"/>
         <annotator
                 language="Yuck"
-                implementationClass="com.github.h3rmt.intellijyuck.YuckAnnotator"/>
+                implementationClass="com.github.h3rmt.intellijyuck.annotator.YuckAnnotator"/>
         <codeInsight.lineMarkerProvider
                 language="Yuck"
-                implementationClass="com.github.h3rmt.intellijyuck.YuckLineMarkerProvider"/>
+                implementationClass="com.github.h3rmt.intellijyuck.search.YuckLineMarkerProvider"/>
         <completion.contributor
                 language="Yuck"
-                implementationClass="com.github.h3rmt.intellijyuck.YuckCompletionContributor"/>
+                implementationClass="com.github.h3rmt.intellijyuck.completion.YuckCompletionContributor"/>
         <psi.referenceContributor language="Yuck"
-                                  implementation="com.github.h3rmt.intellijyuck.YuckReferenceContributor"/>
+                                  implementation="com.github.h3rmt.intellijyuck.completion.YuckReferenceContributor"/>
 
         <stubIndex implementation="com.github.h3rmt.intellijyuck.stubs.index.YuckNamesIndex"/>
         <stubElementTypeHolder class="com.github.h3rmt.intellijyuck.psi.YuckTypes"/>

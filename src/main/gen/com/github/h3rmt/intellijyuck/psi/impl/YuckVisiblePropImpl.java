@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckVisiblePropImpl extends YuckCompositeElementImpl implements YuckVisibleProp {
 
-  public YuckVisiblePropImpl(ASTNode node) {
+  public YuckVisiblePropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

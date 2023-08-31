@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckBoxDefinitionImpl extends YuckCompositeElementImpl implements YuckBoxDefinition {
 
-  public YuckBoxDefinitionImpl(ASTNode node) {
+  public YuckBoxDefinitionImpl(@NotNull ASTNode node) {
     super(node);
   }
 

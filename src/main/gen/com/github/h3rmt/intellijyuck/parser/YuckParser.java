@@ -770,60 +770,6 @@ public class YuckParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // !(RPAREN |  (LPAREN COMBOBOXTEXT) | (LPAREN EXPANDER) | (LPAREN BOX))
-  static boolean WidgetRecover(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "WidgetRecover")) return false;
-    boolean r;
-    Marker m = enter_section_(b, l, _NOT_);
-    r = !WidgetRecover_0(b, l + 1);
-    exit_section_(b, l, m, r, false, null);
-    return r;
-  }
-
-  // RPAREN |  (LPAREN COMBOBOXTEXT) | (LPAREN EXPANDER) | (LPAREN BOX)
-  private static boolean WidgetRecover_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "WidgetRecover_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeToken(b, RPAREN);
-    if (!r) r = WidgetRecover_0_1(b, l + 1);
-    if (!r) r = WidgetRecover_0_2(b, l + 1);
-    if (!r) r = WidgetRecover_0_3(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // LPAREN COMBOBOXTEXT
-  private static boolean WidgetRecover_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "WidgetRecover_0_1")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, LPAREN, COMBOBOXTEXT);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // LPAREN EXPANDER
-  private static boolean WidgetRecover_0_2(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "WidgetRecover_0_2")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, LPAREN, EXPANDER);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // LPAREN BOX
-  private static boolean WidgetRecover_0_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "WidgetRecover_0_3")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
-    r = consumeTokens(b, 0, LPAREN, BOX);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  /* ********************************************************** */
   // WIDTHPROP (int)
   public static boolean WidthProp(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "WidthProp")) return false;

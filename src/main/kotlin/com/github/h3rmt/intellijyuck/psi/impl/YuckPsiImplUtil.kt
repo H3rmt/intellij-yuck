@@ -1,5 +1,6 @@
-package com.github.h3rmt.intellijyuck.psi
+package com.github.h3rmt.intellijyuck.psi.impl
 
+import com.github.h3rmt.intellijyuck.psi.*
 import com.intellij.psi.PsiElement
 
 object YuckPsiImplUtil {

@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckOrientationPropImpl extends YuckCompositeElementImpl implements YuckOrientationProp {
 
-  public YuckOrientationPropImpl(ASTNode node) {
+  public YuckOrientationPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

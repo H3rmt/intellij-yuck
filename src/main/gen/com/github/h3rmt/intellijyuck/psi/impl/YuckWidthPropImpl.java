@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckWidthPropImpl extends YuckCompositeElementImpl implements YuckWidthProp {
 
-  public YuckWidthPropImpl(ASTNode node) {
+  public YuckWidthPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

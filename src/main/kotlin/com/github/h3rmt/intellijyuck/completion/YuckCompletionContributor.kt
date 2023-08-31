@@ -1,12 +1,12 @@
-package com.github.h3rmt.intellijyuck
+package com.github.h3rmt.intellijyuck.completion
 
+import com.github.h3rmt.intellijyuck.YuckUtil
 import com.github.h3rmt.intellijyuck.psi.*
 import com.github.h3rmt.intellijyuck.psi.YuckTokenTypes.WIDGETPROPNAMES
 import com.github.h3rmt.intellijyuck.psi.YuckTokenTypes.WIDGETS
 import com.intellij.codeInsight.completion.*
 import com.intellij.codeInsight.lookup.LookupElementBuilder
 import com.intellij.icons.AllIcons
-import com.intellij.openapi.diagnostic.logger
 import com.intellij.patterns.PlatformPatterns
 import com.intellij.util.ProcessingContext
 

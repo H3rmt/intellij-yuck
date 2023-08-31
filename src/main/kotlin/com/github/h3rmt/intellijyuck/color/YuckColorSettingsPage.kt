@@ -1,5 +1,7 @@
-package com.github.h3rmt.intellijyuck
+package com.github.h3rmt.intellijyuck.color
 
+import com.github.h3rmt.intellijyuck.YuckIcons
+import com.github.h3rmt.intellijyuck.highlight.YuckSyntaxHighlighter
 import com.intellij.openapi.options.colors.ColorDescriptor
 import com.intellij.openapi.options.colors.ColorSettingsPage
 import com.intellij.psi.codeStyle.DisplayPriority

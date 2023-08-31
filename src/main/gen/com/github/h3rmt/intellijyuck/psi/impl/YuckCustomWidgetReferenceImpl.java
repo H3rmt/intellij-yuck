@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckCustomWidgetReferenceImpl extends YuckCompositeElementImpl implements YuckCustomWidgetReference {
 
-  public YuckCustomWidgetReferenceImpl(ASTNode node) {
+  public YuckCustomWidgetReferenceImpl(@NotNull ASTNode node) {
     super(node);
   }
 

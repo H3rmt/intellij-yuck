@@ -1,4 +1,4 @@
-package com.github.h3rmt.intellijyuck
+package com.github.h3rmt.intellijyuck.highlight
 
 import com.intellij.openapi.fileTypes.SyntaxHighlighter
 import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory

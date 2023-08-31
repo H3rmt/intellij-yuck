@@ -13,7 +13,7 @@
   elementTypeClass="com.github.h3rmt.intellijyuck.psi.YuckElementType"
   tokenTypeClass="com.github.h3rmt.intellijyuck.psi.YuckTokenType"
 
-  psiImplUtilClass="com.github.h3rmt.intellijyuck.psi.YuckPsiImplUtil"
+  psiImplUtilClass="com.github.h3rmt.intellijyuck.psi.impl.YuckPsiImplUtil"
 
   tokens=[
     LPAREN               = '('
@@ -122,7 +122,7 @@ CustomWidgetReference ::= LPAREN identifier RPAREN {
 
 private PredefinedWidget ::= ComboBoxTextDefinition | ExpanderDefinition | BoxDefinition
 
-private WidgetRecover ::= !(RPAREN |  (LPAREN COMBOBOXTEXT) | (LPAREN EXPANDER) | (LPAREN BOX))
+//private WidgetRecover ::= !(RPAREN |  (LPAREN COMBOBOXTEXT) | (LPAREN EXPANDER) | (LPAREN BOX))
 
 /*
 combo-box-text

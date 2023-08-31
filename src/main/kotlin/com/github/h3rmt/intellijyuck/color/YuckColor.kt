@@ -1,4 +1,4 @@
-package com.github.h3rmt.intellijyuck
+package com.github.h3rmt.intellijyuck.color
 
 import com.intellij.openapi.editor.colors.TextAttributesKey
 import com.intellij.openapi.options.colors.AttributesDescriptor

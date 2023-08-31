@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckTooltipPropImpl extends YuckCompositeElementImpl implements YuckTooltipProp {
 
-  public YuckTooltipPropImpl(ASTNode node) {
+  public YuckTooltipPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

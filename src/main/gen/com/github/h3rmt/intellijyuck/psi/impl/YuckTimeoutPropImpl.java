@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckTimeoutPropImpl extends YuckCompositeElementImpl implements YuckTimeoutProp {
 
-  public YuckTimeoutPropImpl(ASTNode node) {
+  public YuckTimeoutPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

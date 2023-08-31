@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckVexpandPropImpl extends YuckCompositeElementImpl implements YuckVexpandProp {
 
-  public YuckVexpandPropImpl(ASTNode node) {
+  public YuckVexpandPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

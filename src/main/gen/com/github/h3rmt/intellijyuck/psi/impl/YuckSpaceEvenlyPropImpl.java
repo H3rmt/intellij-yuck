@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckSpaceEvenlyPropImpl extends YuckCompositeElementImpl implements YuckSpaceEvenlyProp {
 
-  public YuckSpaceEvenlyPropImpl(ASTNode node) {
+  public YuckSpaceEvenlyPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 
