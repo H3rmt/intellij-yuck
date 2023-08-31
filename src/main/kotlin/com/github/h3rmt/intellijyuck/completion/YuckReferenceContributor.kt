@@ -1,10 +1,7 @@
-package com.github.h3rmt.intellijyuck
+package com.github.h3rmt.intellijyuck.completion
 
+import com.github.h3rmt.intellijyuck.YuckUtil
 import com.github.h3rmt.intellijyuck.psi.YuckCustomWidgetDefinition
-import com.github.h3rmt.intellijyuck.psi.YuckCustomWidgetReference
-import com.github.h3rmt.intellijyuck.psi.YuckFile
-import com.github.h3rmt.intellijyuck.psi.YuckTypes
-import com.intellij.patterns.PlatformPatterns
 import com.intellij.psi.*
 import com.intellij.util.ProcessingContext
 import com.intellij.util.containers.toArray

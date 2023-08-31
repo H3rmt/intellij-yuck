@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckSpacingPropImpl extends YuckCompositeElementImpl implements YuckSpacingProp {
 
-  public YuckSpacingPropImpl(ASTNode node) {
+  public YuckSpacingPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

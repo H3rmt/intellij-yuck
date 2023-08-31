@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckWmIgnorePropImpl extends YuckCompositeElementImpl implements YuckWmIgnoreProp {
 
-  public YuckWmIgnorePropImpl(ASTNode node) {
+  public YuckWmIgnorePropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

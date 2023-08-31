@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckHalignPropImpl extends YuckCompositeElementImpl implements YuckHalignProp {
 
-  public YuckHalignPropImpl(ASTNode node) {
+  public YuckHalignPropImpl(@NotNull ASTNode node) {
     super(node);
   }
 

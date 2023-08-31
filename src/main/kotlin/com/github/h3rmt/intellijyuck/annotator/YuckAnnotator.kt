@@ -1,12 +1,13 @@
-package com.github.h3rmt.intellijyuck
+package com.github.h3rmt.intellijyuck.annotator
 
 
+import com.github.h3rmt.intellijyuck.color.YuckColor
+import com.github.h3rmt.intellijyuck.YuckUtil
 import com.github.h3rmt.intellijyuck.psi.YuckCompositeElement
 import com.github.h3rmt.intellijyuck.psi.YuckCustomWidgetDefinition
 import com.github.h3rmt.intellijyuck.psi.YuckCustomWidgetReference
 import com.github.h3rmt.intellijyuck.psi.YuckReferenceExpression
 import com.github.h3rmt.intellijyuck.psi.YuckTypes
-import com.github.h3rmt.intellijyuck.psi.YuckWindowDefinition
 import com.intellij.codeInspection.ProblemHighlightType
 import com.intellij.lang.annotation.AnnotationHolder
 import com.intellij.lang.annotation.Annotator

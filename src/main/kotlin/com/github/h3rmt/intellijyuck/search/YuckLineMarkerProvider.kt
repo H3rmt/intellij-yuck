@@ -1,5 +1,6 @@
-package com.github.h3rmt.intellijyuck
+package com.github.h3rmt.intellijyuck.search
 
+import com.github.h3rmt.intellijyuck.YuckUtil
 import com.github.h3rmt.intellijyuck.psi.YuckCustomWidgetDefinition
 import com.github.h3rmt.intellijyuck.psi.YuckCustomWidgetReference
 import com.github.h3rmt.intellijyuck.psi.YuckDefinitionExpression

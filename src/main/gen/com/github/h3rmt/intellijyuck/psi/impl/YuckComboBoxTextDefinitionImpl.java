@@ -12,7 +12,7 @@ import com.github.h3rmt.intellijyuck.psi.*;
 
 public class YuckComboBoxTextDefinitionImpl extends YuckCompositeElementImpl implements YuckComboBoxTextDefinition {
 
-  public YuckComboBoxTextDefinitionImpl(ASTNode node) {
+  public YuckComboBoxTextDefinitionImpl(@NotNull ASTNode node) {
     super(node);
   }
 
