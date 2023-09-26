@@ -7,6 +7,10 @@
     <description><![CDATA[
 Provides support for <a href="https://github.com/elkowar/eww">Eww's Yuck</a> language
 <br>
+This Extension is in early development and not ready for production use, as it only provides support for a fraction of the language.
+See the latest Release <a href="https://github.com/H3rmt/intellij-yuck/releases">releases</a> for a list of supported features.
+<br>
+<a href="https://plugins.jetbrains.com/plugin/22628-yuck/">Homepage</a>
     ]]></description>
 
 
@@ -14,30 +18,34 @@ Provides support for <a href="https://github.com/elkowar/eww">Eww's Yuck</a> lan
 
     <extensions defaultExtensionNs="com.intellij">
         <fileType
-                name="Yuck"
+                name="yuck"
                 implementationClass="com.github.h3rmt.intellijyuck.YuckFileType"
                 fieldName="INSTANCE"
-                language="Yuck"
+                language="yuck"
                 extensions="yuck"/>
         <lang.parserDefinition
-                language="Yuck"
+                language="yuck"
                 implementationClass="com.github.h3rmt.intellijyuck.YuckParserDefinition"/>
         <lang.syntaxHighlighterFactory
-                language="Yuck"
+                language="yuck"
                 implementationClass="com.github.h3rmt.intellijyuck.highlight.YuckSyntaxHighlighterFactory"/>
         <colorSettingsPage
                 implementation="com.github.h3rmt.intellijyuck.color.YuckColorSettingsPage"/>
         <annotator
-                language="Yuck"
+                language="yuck"
                 implementationClass="com.github.h3rmt.intellijyuck.annotator.YuckAnnotator"/>
         <codeInsight.lineMarkerProvider
-                language="Yuck"
+                language="yuck"
                 implementationClass="com.github.h3rmt.intellijyuck.search.YuckLineMarkerProvider"/>
         <completion.contributor
-                language="Yuck"
+                language="yuck"
                 implementationClass="com.github.h3rmt.intellijyuck.completion.YuckCompletionContributor"/>
-        <psi.referenceContributor language="Yuck"
-                                  implementation="com.github.h3rmt.intellijyuck.completion.YuckReferenceContributor"/>
+        <psi.referenceContributor
+                language="yuck"
+                implementation="com.github.h3rmt.intellijyuck.completion.YuckReferenceContributor"/>
+        <lang.refactoringSupport
+                language="yuck"
+                implementationClass="com.github.h3rmt.intellijyuck.refactoring.YuckRefactoringSupportProvider"/>
 
         <stubIndex implementation="com.github.h3rmt.intellijyuck.stubs.index.YuckNamesIndex"/>
         <stubElementTypeHolder class="com.github.h3rmt.intellijyuck.psi.YuckTypes"/>
