@@ -6,7 +6,7 @@ import com.intellij.openapi.vfs.VirtualFile
 
 
 object YuckFileType : LanguageFileType(YuckLanguage) {
-  override fun getName() = "Yuck"
+  override fun getName() = "yuck"
   override fun getDescription() = "Yuck file"
   override fun getDefaultExtension() = "yuck"
   override fun getIcon() = YuckIcons.Icon

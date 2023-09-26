@@ -18,7 +18,7 @@ See the latest Release <a href="https://github.com/H3rmt/intellij-yuck/releases"
 
     <extensions defaultExtensionNs="com.intellij">
         <fileType
-                name="Yuck"
+                name="yuck"
                 implementationClass="com.github.h3rmt.intellijyuck.YuckFileType"
                 fieldName="INSTANCE"
                 language="yuck"
